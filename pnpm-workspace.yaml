@@ -1,0 +1,4 @@
+packages:
+  - "open/config"
+  - "open/api-client"
+  - "open/types"
