@@ -1,5 +1,5 @@
 {
-  "extends": "@lieshoucloud/config/tsconfig.base.json",
+  "extends": "@lieshoucloud/contract-config/tsconfig.base.json",
   "compilerOptions": {
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
