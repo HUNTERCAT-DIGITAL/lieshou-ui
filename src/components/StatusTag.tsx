@@ -11,7 +11,7 @@
 import { Tag } from "antd";
 import type { ReactNode } from "react";
 
-import type { StatusMeta } from "@lieshoucloud/types";
+import type { StatusMeta } from "@lieshoucloud/contract-types";
 
 interface StatusTagProps {
   meta: StatusMeta;

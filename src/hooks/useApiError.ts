@@ -8,7 +8,7 @@
 import { App } from "antd";
 import { useCallback } from "react";
 
-import { AuthError, getErrorMessage } from "@lieshoucloud/api-client";
+import { AuthError, getErrorMessage } from "@lieshoucloud/contract-api";
 
 export function useApiError(): (e: unknown) => void {
   const { message } = App.useApp();

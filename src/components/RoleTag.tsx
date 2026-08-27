@@ -6,7 +6,7 @@
 import { Tag } from "antd";
 import type { ReactNode } from "react";
 
-import type { RoleTagColor } from "@lieshoucloud/types";
+import type { RoleTagColor } from "@lieshoucloud/contract-types";
 
 export const ROLE_COLORS: Record<string, RoleTagColor> = {
   PLATFORM_ADMIN: "gold",

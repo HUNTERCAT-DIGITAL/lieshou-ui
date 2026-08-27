@@ -50,4 +50,4 @@ export { useClock } from "./hooks/useClock";
 export { useApiError } from "./hooks/useApiError";
 export { usePaged, type PagedResult, type UsePaged } from "./hooks/usePaged";
 
-export type { HealthStatus, StatusMeta, RoleTagColor } from "@lieshoucloud/types";
+export type { HealthStatus, StatusMeta, RoleTagColor } from "@lieshoucloud/contract-types";
