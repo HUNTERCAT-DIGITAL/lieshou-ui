@@ -25,6 +25,13 @@ export { AuthGuard, type AuthGuardProps } from "./components/AuthGuard";
 
 export { truncateText, formatBytes, formatNumber, formatRelativeTime } from "./utils/format";
 
+// ── 通用工具函数（自 admin-web 纯函数族下沉）──
+export { downloadCsvTemplate } from "./utils/csv";
+export { compressImage, MAX_SIDE_PX, JPEG_QUALITY, SKIP_COMPRESS_BYTES } from "./utils/image";
+export { runBatch, type BatchSummary } from "./utils/batch";
+export { filterByKeywordAndStatus, type ListFilterParams } from "./utils/list-filter";
+export { getTenantCode, setTenantCode, clearTenantCode, TENANT_CODE_STORAGE_KEY } from "./utils/tenant-code";
+
 // ── 大屏（datav）组件与主题 —— 2026-08-25 从驾驶舱下沉 packages/ui ──
 export { default as DatavPanel, type ZoomInfo } from "./datav/Panel";
 export { default as DatavPanelBadge, type PanelBadgeTone } from "./datav/PanelBadge";
