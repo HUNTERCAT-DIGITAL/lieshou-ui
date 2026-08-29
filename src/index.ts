@@ -61,4 +61,5 @@ export type { HealthStatus, StatusMeta, RoleTagColor } from "@lieshoucloud/contr
 
 // ── 轻量自绘图表（2026-08 自 @lieshoucloud/charts 迁入 · 零第三方依赖）──
 export { default as BarChart, type BarChartProps } from "./charts/BarChart";
-export { seriesExtent, type BarDatum } from "./charts/series";
+export { default as LineChart, type LineChartProps } from "./charts/LineChart";
+export { seriesExtent, seriesExtentAll, type BarDatum, type LinePoint, type LineSeries } from "./charts/series";
