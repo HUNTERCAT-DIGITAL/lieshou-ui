@@ -58,3 +58,7 @@ export { useApiError } from "./hooks/useApiError";
 export { usePaged, type PagedResult, type UsePaged } from "./hooks/usePaged";
 
 export type { HealthStatus, StatusMeta, RoleTagColor } from "@lieshoucloud/contract-types";
+
+// ── 轻量自绘图表（2026-08 自 @lieshoucloud/charts 迁入 · 零第三方依赖）──
+export { default as BarChart, type BarChartProps } from "./charts/BarChart";
+export { seriesExtent, type BarDatum } from "./charts/series";
