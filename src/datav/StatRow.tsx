@@ -11,6 +11,8 @@ export interface StatItem {
   value: number;
   suffix?: string;
   color?: string;
+  /** 点击回调（可选；驾驶舱统计卡 → 跳转业务列表页） */
+  onClick?: () => void;
 }
 
 interface StatRowProps {
@@ -25,7 +27,7 @@ export default function StatRow({ stats, cols = 5 }: StatRowProps) {
   return (
     <div style={{ display: "grid", gridTemplateColumns: gridCols, gap: 10, marginBottom: 10 }}>
       {stats.map((s) => (
-        <FlopStat key={s.title} title={s.title} value={s.value} suffix={s.suffix} color={s.color} />
+        <FlopStat key={s.title} title={s.title} value={s.value} suffix={s.suffix} color={s.color} onClick={s.onClick} />
       ))}
     </div>
   );

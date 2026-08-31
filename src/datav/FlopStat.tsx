@@ -13,6 +13,8 @@ interface FlopStatProps {
   value: number;
   suffix?: string;
   color?: string;
+  /** 点击回调（可选；传了则整卡可点击，hover 发光提示） */
+  onClick?: () => void;
 }
 
 /** 数字列行高（与 56px 数字匹配） */
@@ -56,9 +58,10 @@ function AnimatedNumber({ value }: { value: number }) {
   );
 }
 
-export default function FlopStat({ title, value, suffix, color }: FlopStatProps) {
+export default function FlopStat({ title, value, suffix, color, onClick }: FlopStatProps) {
   const c = color ?? "#00e5ff";
   const [pulseKey, setPulseKey] = useState(0);
+  const [hover, setHover] = useState(false);
 
   // 数值变化 → 色条脉冲
   useEffect(() => {
@@ -67,16 +70,22 @@ export default function FlopStat({ title, value, suffix, color }: FlopStatProps)
 
   return (
     <div
+      onClick={onClick}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
       style={{
         position: "relative",
-        border: "1px solid rgba(30,91,138,0.65)",
-        borderTop: "2px solid rgba(0,188,235,0.8)",
+        border: `1px solid ${hover ? "rgba(0,188,235,0.9)" : "rgba(30,91,138,0.65)"}`,
+        borderTop: `2px solid ${hover ? "#00bceb" : "rgba(0,188,235,0.8)"}`,
         borderRadius: 8,
-        background: "rgba(9,30,60,0.55)",
-        boxShadow: "0 0 12px rgba(0,188,235,0.10)",
+        background: hover ? "rgba(9,40,80,0.75)" : "rgba(9,30,60,0.55)",
+        boxShadow: hover ? "0 0 16px rgba(0,188,235,0.30)" : "0 0 12px rgba(0,188,235,0.10)",
         padding: "8px 10px 6px",
         textAlign: "center",
         overflow: "hidden",
+        cursor: onClick ? "pointer" : "default",
+        userSelect: onClick ? "none" : undefined,
+        transition: "all .2s",
       }}
     >
       {/* 顶部渐变发光色条（数值变化时脉冲） */}
